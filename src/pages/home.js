@@ -12,7 +12,6 @@ function enviarLogin() {
   firebase.auth().signInWithEmailAndPassword(email, password).then(() => {
     window.location.href = '#feed';
   })
-
     .catch((error) => {
     // Handle Errors here.
       const errorCode = error.code;
@@ -46,51 +45,46 @@ function googleSignIn(){
 function Login() {
   const template = `
   <header>
-    <img src="imagens/funnymot.jpg" class="logo">
+    <img src="imagens/funny-banner.png" class="logo">
   </header>
-  <section>
+  <section class="geral">
   <h1 class = "name-page"> Funny Motivation</h1>
   <h3 class = "bem-vindx"> Seja Bem-vindxs</h3>
-  <section>
-  <section class="login-form">
-  <form >
-
+  
+  <form class="form">
   ${Input({
-    class: 'email-input',
+    class:"input email-input",
+    id: 'email-input',
     placeholder: ' E-mail',
     type: 'text',
-  })}<br>
-    ${Input({
-    class: 'senha-input',
+  })}
+  ${Input({
+    class:"input senha-input",
+    id: 'senha-input',
     placeholder: ' Senha',
     type: 'password',
-  })}</form></section>
+  })}</form>
     <div class="btn btn-enviar">
-    ${Button({
+  ${Button({
+    class: 'button',
     id: 'enviar',
     title: 'Login',
     onClick: enviarLogin,
   })}</div>
     <div class="btn btn-google">
     <h5 class="ou-entre"> Ou entre com </h5>
-    ${Button({
+  ${Button({
     id:'google',
     title:'<i class="fab fa-google"></i>',
     onClick: googleSignIn, 
   })}</div>
     <div class="btn btn-cadastrar">
   ${Button({
+    class: 'button',
     id: 'cadastrar',
     title: 'Cadastre-se',
     onClick: mudarPg,
-  })}</div>
-  </form>
-</main>  
-  ${Button({
-    id: 'google',
-    title: '<i id = "google" class="fab fa-google-plus-square"></i>',
-    onClick: googleSignIn,
-  })}
+  })}</div> </section>
 `;
 
   return template;

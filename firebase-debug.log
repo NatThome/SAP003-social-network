@@ -314,3 +314,57 @@
 [info] i  hosting: Serving hosting files from: src
 [info] ✔  hosting: Local server: http://localhost:5000
 
+[debug] [2019-10-15T21:13:43.065Z] ----------------------------------------------------------------------
+[debug] [2019-10-15T21:13:43.067Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-15T21:13:43.068Z] CLI Version:   7.5.0
+[debug] [2019-10-15T21:13:43.068Z] Platform:      win32
+[debug] [2019-10-15T21:13:43.068Z] Node Version:  v10.16.3
+[debug] [2019-10-15T21:13:43.068Z] Time:          Tue Oct 15 2019 18:13:43 GMT-0300 (GMT-03:00)
+[debug] [2019-10-15T21:13:43.068Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-15T21:13:43.075Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-15T21:13:43.075Z] > authorizing via signed-in user
+[debug] [2019-10-15T21:13:43.076Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-15T21:13:43.077Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+
+[debug] [2019-10-15T21:13:44.178Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-15T21:13:44.179Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+ 
+[debug] [2019-10-15T21:13:44.687Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] 
+[debug] [2019-10-15T21:13:44.689Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+ 
+[debug] [2019-10-15T21:13:45.902Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-10-16T16:11:33.395Z] ----------------------------------------------------------------------
+[debug] [2019-10-16T16:11:33.397Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-16T16:11:33.397Z] CLI Version:   7.5.0
+[debug] [2019-10-16T16:11:33.397Z] Platform:      win32
+[debug] [2019-10-16T16:11:33.397Z] Node Version:  v10.16.3
+[debug] [2019-10-16T16:11:33.398Z] Time:          Wed Oct 16 2019 13:11:33 GMT-0300 (GMT-03:00)
+[debug] [2019-10-16T16:11:33.398Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-16T16:11:33.407Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-16T16:11:33.407Z] > authorizing via signed-in user
+[debug] [2019-10-16T16:11:33.407Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-16T16:11:33.410Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-16T16:11:33.410Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-16T16:11:36.035Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:11:36.042Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+
+[debug] [2019-10-16T16:11:37.256Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-16T16:11:37.257Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+ 
+[debug] [2019-10-16T16:11:38.399Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] 
+[debug] [2019-10-16T16:11:38.403Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+ 
+[debug] [2019-10-16T16:11:39.718Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5000
