@@ -24,7 +24,6 @@
   align-items: center;
 }
 
-
 body{
   background: no-repeat;
   height: 100%;
@@ -151,4 +150,10 @@ width: 100%;
   margin: auto;
 }
 
-
+.area-publicacao{
+  border:1px solid #4168e1;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  border-radius:10; 
+  resize: none;
+}

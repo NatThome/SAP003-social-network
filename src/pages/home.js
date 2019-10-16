@@ -67,6 +67,7 @@ function Login() {
   })}</form></section>
     <div class="btn btn-enviar">
     ${Button({
+      class:'primary-button',
     id: 'enviar',
     title: 'Login',
     onClick: enviarLogin,
