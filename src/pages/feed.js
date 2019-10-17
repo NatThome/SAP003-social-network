@@ -18,6 +18,7 @@ function Feed() {
   `
   <h2> Feed</h2> 
   ${textArea ({rows:'3',cols:'30', wrap:'hard',class:'area-publicacao'})} <br>
+
   ${Button ({class:"button", id :'publicacao', title:'Publicar', onClick:enviarTexto})}
   ${Button({class:"button", id: 'voltar', title: 'voltar', onClick: voltarPg })}
   <p id= 'retorna-text'></p>
