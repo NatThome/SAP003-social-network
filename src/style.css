@@ -4,24 +4,15 @@
   border: 0;
 }
 
+html{
+  height: 100%;
+}
+
+@media (min-width: 180px){
+
 .main{
   display: flex;
-  align-items: center;
-}
-
-.titulo{
-  text-align: center;
-  font-family: 'Courier New', Courier, monospace ;
-}
-
-.subtitulo{ 
-  text-align: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.button{
-  display: flex;
-  align-items: center;
+  flex-direction: column;
 }
 
 body{
@@ -38,8 +29,10 @@ body{
 }
 
 .logo{
-height: 100%;  
-width: 100%;
+  margin-top: 20px;
+  margin-left: 20px;
+  height: 90%;  
+  width: 90%;
 }
 
 .name-page{
@@ -54,56 +47,25 @@ width: 100%;
   padding: 5px;
 }
 
-.email-input {
-  border-radius: 15px;
-  padding: 10px;
-  height: 30%;
-  margin: 10px;
-}
-
-.senha-input {
-  border-radius: 15px;
-  padding: 10px;
-  height: 30%;
-}
-
-.login-form{
-  padding: 20px;
-  text-align: center;
-}
-
-.btn {
+.geral{
+  margin: 30px 10px 20px 10px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
   align-items: center;
 }
 
-
-.fab :hover{
-  color: blue;
+.form{
+  text-align: center;
 }
 
-/* .btn-enviar{
-  color: #0191f2;
-  width: 50px;
-  margin: 10px;
-  background-color: white;
+.input {
   border-radius: 15px;
-} */
-
-#enviar{
-  color: #0191f2;
-  width: 50px;
+  padding: 10px;
+  width: 225px;
   margin: 10px;
-  background-color: white;
-  border-radius: 15px;
-  width: 70px;
-  height: 25px;
-  font-weight: bold; 
 }
 
-#cadastrar{
+.button{
   color: #0191f2;
   width: 50px;
   margin: 10px;
@@ -113,6 +75,18 @@ width: 100%;
   height: 25px;
   font-weight: bold;
 }
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.fab :hover{
+  color: blue;
+}
+
 .ou-entre{
   color: #0191f2;
   text-align: center;
@@ -128,26 +102,20 @@ width: 100%;
   height: 25px;
 }
 
-.btn-google{  
-  
+.area-publicacao{
+  border:1px solid #4168e1;
+  font-size: 20px;
+  font-family: 'Playfair Display', serif;
+  border-radius:10; 
+  resize: none;
 }
 
+.dados-cadastro{
+  align-items: center;
 }
 
-/* .primary-button {
-  background-color: #00a1f2;
-  padding: 10px;
-  font-size: 1.5rem;
-  border-radius: 5px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
+.form-cadastro{
 
-  color:white;
-}  */
-
-  padding: 5px;
-  margin: auto;
 }
 
 .area-publicacao{
@@ -157,3 +125,4 @@ width: 100%;
   border-radius:10; 
   resize: none;
 }
+

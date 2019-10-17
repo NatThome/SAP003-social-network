@@ -33,19 +33,17 @@ function voltarPg() {
 
 function Cadastro() {
   const template = `
-    <h1> Rede Social</h1>
-    <h2> Cadastro</h2>
+    <h1 class = "name-page"> Cadastro</h1>
 
-
-  <section>
-  <form>
-    ${Input({ class: 'nome-input', placeholder: 'Nome', type: 'text' })}
-    ${Input({ class: 'sobrenome-input', placeholder: 'Sobrenome', type: 'text' })}
-    ${Input({ class: 'dtNasc-input', placeholder: 'Nascimento', type: 'text' })}
-    ${Input({ class: 'email-input', placeholder: 'E-mail', type: 'text' })}
-    ${Input({ class: 'senha-input', placeholder: 'Senha', type: 'password' })}
-    ${Button({ id: 'cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
-    ${Button({ id: 'voltar', title: 'voltar', onClick: voltarPg })}
+  <section class="dados-cadastro">
+  <form class="form-cadastro">
+    ${Input({class:"input", id: 'nome-input', placeholder: 'Nome', type: 'text' })}
+    ${Input({class:"input", id: 'sobrenome-input', placeholder: 'Sobrenome', type: 'text' })}
+    ${Input({class:"input", id: 'dtNasc-input', placeholder: 'Nascimento', type: 'text' })}
+    ${Input({class:"input", id: 'email-input', placeholder: 'E-mail', type: 'text' })}
+    ${Input({class:"input", id: 'senha-input', placeholder: 'Senha', type: 'password' })}
+    ${Button({class: 'button', id: 'cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
+    ${Button({class: 'button', id: 'voltar', title: 'Voltar', onClick: voltarPg })}
   </form>
   </section>
 
