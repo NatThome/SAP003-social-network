@@ -62,6 +62,7 @@ function Feed() {
   ${Button ({class:'button', id:'publicacao', title: 'Publicar', onClick:sendPost })}
   ${Button ({class:'button', id: 'voltar', title: 'voltar', onClick: voltarPg })}
   <ul id='paloma'></ul>
+
 `;
   return temp;
 }
