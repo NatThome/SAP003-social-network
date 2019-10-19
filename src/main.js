@@ -23,7 +23,7 @@ window.addEventListener('hashchange', () => {
         init();
         window.location.hash = '#home'; 
         //arrumar issoooooo
-        window.location.hash = '#cadastro';
+        //window.location.hash = '#cadastro';
     }
   });
 }, false);

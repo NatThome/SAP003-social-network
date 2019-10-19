@@ -37,7 +37,6 @@ function sendPost() {
     window.show()
 }
 
-
 function show (){
   const allPosts = firebase.firestore().collection('posts');
  
@@ -55,7 +54,6 @@ function show (){
   }); 
 }
 
-
 function Feed() {
 
   const temp = `
@@ -71,30 +69,3 @@ function Feed() {
 window.show = show;
 
 export default Feed;
-
-
-
-// function loadData() {
-//   const postColections = firebase.firestore().collection('posts');
-//   const postList = document.getElementById('area-publicacao');
-//   postList.innerHTML = 'carregando...';
-//   postColections.orderBy('timestamp').get().then((snap) => {
-//     postList.innerHTML = '';
-//     snap.forEach((post) => {
-//       addPost(post);
-//       //console.log(post.data());
-//     });
-//   });
-// }
-
-// function addPost(post) {
-//   const postList = document.getElementById('posts');
-//   const postTemplate = `
-//   <li>
-//   ${post.data().timestamp.toDate().toLocaleString('pt-BR')}:
-//   ${post.data().text}
-//   </li>
-//   `;
-
-//   postList.innerHTML = postTemplate;
-// }

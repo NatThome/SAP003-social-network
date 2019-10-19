@@ -92,7 +92,3 @@ function Login() {
 
 export default Login;
 
- 
-
-//CTRL K C - deixar parte selecionada comentada
-
