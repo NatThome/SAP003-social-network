@@ -1,29 +1,72 @@
 import Button from '../components/button.js';
 import textArea from '../components/textarea.js';
+
 function voltarPg() {
-  window.location.href = '#home';
+  firebase.auth().signOut().then(function() {
+    window.location.href = '#home';
+  }).catch(function(error) {
+    console.log(error);
+  });
 }
 
-function enviarTexto(){
-  const texto = document.querySelector('.area-publicacao').value;
+function delet(){
+  const id = event.target.dataset.id;
+  firebase.firestore().collection('posts').doc(id).delete();
+  //event.target.parentElement.remove();
+  document.querySelector(`li[data-id='${id}']`).remove();
+}
 
-  console.log(texto)
+function sendPost() {
+  const publi = document.querySelector('.area-publicacao').value;
+  const id = firebase.auth().currentUser.uid;
+  
+  const post = {
+    publi,
+  };
 
-  document.getElementById('retorna-text').innerHTML += texto;
+  firebase.firestore().collection('posts').add({ post, user: id })
+    // .then((docRef) => {
+    //   document.querySelector('ul').insertAdjacentHTML('afterbegin', `
+    //     <li data-id='${docRef.id}'> 
+    //     ${text}
+    //     ${Button({class:'button', id: 'deletar', title: 'Deletar', onClick: delet })}
+    //     </li>
+    //   `)
+    // })
 
+    window.show()
+}
+
+function show (){
+  const allPosts = firebase.firestore().collection('posts');
+ 
+  allPosts.get().then(snap => {
+    let postsLayout = '';
+    snap.forEach((doc) => {  
+      postsLayout += `
+        <li data-id='${doc.id}'>
+          ${doc.data().post.publi}
+          ${Button({ dataId: doc.id, title: 'Deletar', onClick: delet })}
+        </li>
+      `;
+    });
+    document.getElementById('paloma').innerHTML = postsLayout;
+  }); 
 }
 
 function Feed() {
-  const temp = 
-  `
-  <h2> Feed</h2> 
-  ${textArea ({rows:'3',cols:'30', wrap:'hard',class:'area-publicacao'})} <br>
 
-  ${Button ({class:"button", id :'publicacao', title:'Publicar', onClick:enviarTexto})}
-  ${Button({class:"button", id: 'voltar', title: 'voltar', onClick: voltarPg })}
-  <p id= 'retorna-text'></p>
+  const temp = `
+  <h2> Feed</h2> 
+  ${textArea ({rows: '3',cols: '30', wrap: 'hard',class: 'area-publicacao', id: 'area-publicacao' })}
+  ${Button ({class:'button', id:'publicacao', title: 'Publicar', onClick:sendPost })}
+  ${Button ({class:'button', id: 'voltar', title: 'voltar', onClick: voltarPg })}
+  <ul id='paloma'></ul>
+
 `;
   return temp;
 }
+
+window.show = show;
 
 export default Feed;
