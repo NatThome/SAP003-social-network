@@ -15,20 +15,19 @@ const pages = {
 };
 
 window.addEventListener('hashchange', () => {
-  // eslint-disable-next-line no-restricted-globals
-  document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
+      // User is signed in.
+    } else {
+        init();
+        window.location.hash = '#home'; 
+        //arrumar issoooooo
+        window.location.hash = '#cadastro';
+    }
+  });
 }, false);
 
-const firebaseConfig = {
-  apiKey: 'AIzaSyCK9mYILI8AUY8ZrwEYeS24eRjuToRY1bM',
-  authDomain: 'rede-social-b4317.firebaseapp.com',
-  databaseURL: 'https://rede-social-b4317.firebaseio.com',
-  projectId: 'rede-social-b4317',
-  storageBucket: '',
-  messagingSenderId: '692267998745',
-  appId: '1:692267998745:web:67ae94498089ad977c9488',
-  measurementId: 'G-812STV8Y8C',
-};
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
+window.addEventListener('load' , () => {
+  window.location.hash = '#home';
+})

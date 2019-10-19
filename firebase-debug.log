@@ -368,3 +368,33 @@
 [debug] [2019-10-16T16:11:39.718Z] <<< HTTP RESPONSE 200
 [info] i  hosting: Serving hosting files from: src
 [info] +  hosting: Local server: http://localhost:5000
+[debug] [2019-10-18T14:26:40.238Z] ----------------------------------------------------------------------
+[debug] [2019-10-18T14:26:40.240Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\nathy\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2019-10-18T14:26:40.240Z] CLI Version:   7.5.0
+[debug] [2019-10-18T14:26:40.240Z] Platform:      win32
+[debug] [2019-10-18T14:26:40.240Z] Node Version:  v10.16.3
+[debug] [2019-10-18T14:26:40.242Z] Time:          Fri Oct 18 2019 11:26:40 GMT-0300 (GMT-03:00)
+[debug] [2019-10-18T14:26:40.242Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-10-18T14:26:40.254Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-10-18T14:26:40.254Z] > authorizing via signed-in user
+[debug] [2019-10-18T14:26:40.254Z] [iam] checking project rede-social-b4317 for permissions ["firebase.projects.get"]
+[debug] [2019-10-18T14:26:40.255Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-10-18T14:26:40.256Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-10-18T14:26:41.122Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-18T14:26:41.127Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-b4317:testIamPermissions  
+
+[debug] [2019-10-18T14:26:42.939Z] <<< HTTP RESPONSE 200
+[debug] [2019-10-18T14:26:42.940Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317  
+ 
+[debug] [2019-10-18T14:26:44.659Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] 
+[debug] [2019-10-18T14:26:44.662Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
+ 
+[debug] [2019-10-18T14:26:46.059Z] <<< HTTP RESPONSE 200
+[warn] !  hosting: Port 5000 is not available. Trying another port...
+[info] i  hosting: Serving hosting files from: src
+[info] +  hosting: Local server: http://localhost:5005

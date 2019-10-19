@@ -1,7 +1,7 @@
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
-function mudarPg() {
+function pgCadastro() {
   window.location.href = '#cadastro';
 }
 
@@ -83,7 +83,7 @@ function Login() {
     class: 'button',
     id: 'cadastrar',
     title: 'Cadastre-se',
-    onClick: mudarPg,
+    onClick: pgCadastro,
   })}</div> </section>
 `;
 
@@ -92,12 +92,7 @@ function Login() {
 
 export default Login;
 
-// Para desconectar um usuário, chame signOut:
-// firebase.auth().signOut().then(function() {
-  // Sign-out successful.
-//}).catch(function(error) {
-  // An error happened.
-// }); 
+ 
 
 //CTRL K C - deixar parte selecionada comentada
 
