@@ -1,7 +1,15 @@
 import Button from '../components/button.js';
 import textArea from '../components/textarea.js';
 
-function voltarPg() {
+// function edit(){
+//   const id = event.target.dataset.id;
+//   let texto = 'abobora com pimenta';
+
+//   firebase.firestore().collection('post').doc(id).update({
+//     publi:texto
+//   });
+// }
+function logout() {
   firebase.auth().signOut().then(function() {
     window.location.href = '#home';
   }).catch(function(error) {
@@ -12,19 +20,21 @@ function voltarPg() {
 function delet(){
   const id = event.target.dataset.id;
   firebase.firestore().collection('posts').doc(id).delete();
-  //event.target.parentElement.remove();
   document.querySelector(`li[data-id='${id}']`).remove();
 }
 
 function sendPost() {
   const publi = document.querySelector('.area-publicacao').value;
   const id = firebase.auth().currentUser.uid;
+  const time = new Date().toLocaleString('pt-BR')
   
   const post = {
     publi,
+    id,
+    time
   };
 
-  firebase.firestore().collection('posts').add({ post, user: id })
+  firebase.firestore().collection('posts').add({post})
     // .then((docRef) => {
     //   document.querySelector('ul').insertAdjacentHTML('afterbegin', `
     //     <li data-id='${docRef.id}'> 
@@ -33,40 +43,47 @@ function sendPost() {
     //     </li>
     //   `)
     // })
+    window.mostraPost()
 
-    window.show()
+    document.querySelector('.area-publicacao').value='';
 }
 
-function show (){
+function mostraPost(){
   const allPosts = firebase.firestore().collection('posts');
  
-  allPosts.get().then(snap => {
+  allPosts.orderBy('time', 'desc').get().then(snap => {
     let postsLayout = '';
     snap.forEach((doc) => {  
       postsLayout += `
-        <li data-id='${doc.id}'>
-          ${doc.data().post.publi}
+        <li data-id='${doc.id}' class='post'>
+        <p class='time'> ${doc.data().post.time} </p>
+        <p> ${doc.data().post.publi} </p>
+          ${Button ({ dataId:doc.id, title:'Editar'})}
           ${Button({ dataId: doc.id, title: 'Deletar', onClick: delet })}
         </li>
       `;
     });
-    document.getElementById('paloma').innerHTML = postsLayout;
+    document.getElementById('post-layout').innerHTML = postsLayout; 
   }); 
 }
 
 function Feed() {
 
   const temp = `
+  <header>
   <h2> Feed</h2> 
+  ${Button ({id: 'voltar', title: 'Sair', onClick: logout})}
+  </header>
+  <form class='areaFeed'>
   ${textArea ({rows: '3',cols: '30', wrap: 'hard',class: 'area-publicacao', id: 'area-publicacao' })}
   ${Button ({class:'button', id:'publicacao', title: 'Publicar', onClick:sendPost })}
-  ${Button ({class:'button', id: 'voltar', title: 'voltar', onClick: voltarPg })}
-  <ul id='paloma'></ul>
+  <ul id='post-layout'></ul>
+  </form>
 
 `;
   return temp;
 }
 
-window.show = show;
+window.mostraPost = mostraPost;
 
 export default Feed;
