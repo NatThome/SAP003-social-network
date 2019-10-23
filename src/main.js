@@ -18,8 +18,9 @@ window.addEventListener('hashchange', () => {
   firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
       document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
+      window.mostraPost()
       // User is signed in.
-    } else {
+    } else if (!user) {
         init();
         window.location.hash = '#home'; 
         //arrumar issoooooo
