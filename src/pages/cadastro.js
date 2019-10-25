@@ -37,13 +37,13 @@ function Cadastro() {
 
   <section class="dados-cadastro">
   <form class="form-cadastro">
-    ${Input({class:"input", id: 'nome-input', placeholder: 'Nome', type: 'text' })}
-    ${Input({class:"input", id: 'sobrenome-input', placeholder: 'Sobrenome', type: 'text' })}
-    ${Input({class:"input", id: 'dtNasc-input', placeholder: 'Nascimento', type: 'text' })}
-    ${Input({class:"input", id: 'email-input', placeholder: 'E-mail', type: 'text' })}
-    ${Input({class:"input", id: 'senha-input', placeholder: 'Senha', type: 'password' })}
-    ${Button({class: 'button', id: 'cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
-    ${Button({class: 'button', id: 'voltar', title: 'Voltar', onClick: voltarPg })}
+    ${Input({class: 'input nome-input', placeholder: 'Nome', type: 'text' })}
+    ${Input({class: 'input sobrenome-input', placeholder: 'Sobrenome', type: 'text' })}
+    ${Input({class: 'input dtNasc-input', placeholder: 'Nascimento', type: 'text' })}
+    ${Input({class: 'input email-input', placeholder: 'E-mail', type: 'text' })}
+    ${Input({class: 'input senha-input', placeholder: 'Senha', type: 'password' })}
+    ${Button({class: 'button cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
+    ${Button({class: 'button voltar', title: 'Voltar', onClick: voltarPg })}
   </form>
   </section>
 
