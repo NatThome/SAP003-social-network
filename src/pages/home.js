@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function pgCadastro() {
-  window.location.href = '#cadastro';
+  window.location.hash = '#cadastro';
 }
 
 function enviarLogin() {
@@ -22,7 +22,6 @@ function enviarLogin() {
 }
 
 function googleSignIn(){
-
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
     // This gives you a Google Access Token. You can use it to access the Google API.

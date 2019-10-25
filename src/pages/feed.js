@@ -11,7 +11,6 @@ import textArea from '../components/textarea.js';
 // }
 function logout() {
   firebase.auth().signOut().then(function() {
-    window.location.href = '#home';
   }).catch(function(error) {
     console.log(error);
   });
@@ -34,15 +33,8 @@ function sendPost() {
     time
   };
 
-  firebase.firestore().collection('posts').add({post})
-    // .then((docRef) => {
-    //   document.querySelector('ul').insertAdjacentHTML('afterbegin', `
-    //     <li data-id='${docRef.id}'> 
-    //     ${text}
-    //     ${Button({class:'button', id: 'deletar', title: 'Deletar', onClick: delet })}
-    //     </li>
-    //   `)
-    // })
+  firebase.firestore().collection('posts').add(post)
+     
     window.mostraPost()
 
     document.querySelector('.area-publicacao').value='';
@@ -56,8 +48,8 @@ function mostraPost(){
     snap.forEach((doc) => {  
       postsLayout += `
         <li data-id='${doc.id}' class='post'>
-        <p class='time'> ${doc.data().post.time} </p>
-        <p> ${doc.data().post.publi} </p>
+        <p class='time'> ${doc.data().time} </p>
+        <p> ${doc.data().publi} </p>
           ${Button ({ dataId:doc.id, title:'Editar'})}
           ${Button({ dataId: doc.id, title: 'Deletar', onClick: delet })}
         </li>
