@@ -37,7 +37,6 @@ function sendPost() {
   firebase.firestore().collection('posts').add(post)
      
     window.mostraPost()
-
     document.querySelector('.area-publicacao').value='';
 }
 

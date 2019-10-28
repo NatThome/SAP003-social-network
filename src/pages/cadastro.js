@@ -19,7 +19,6 @@ function cadastrarUser() {
     nascto,
     email,
   };
-
   firebase.firestore().collection('users').add(user).then((res) => {
     nome.value = '';
     sobrenome.value = '';

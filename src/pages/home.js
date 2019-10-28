@@ -29,7 +29,6 @@ function googleSignIn(){
     const errorCode = error.code;
     const errorMessage = error.message;
     const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
   });
 }
