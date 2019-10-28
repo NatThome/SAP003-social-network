@@ -9,6 +9,7 @@ import textArea from '../components/textarea.js';
 //     publi:texto
 //   });
 // }
+
 function logout() {
   firebase.auth().signOut().then(function() {
   }).catch(function(error) {
@@ -36,7 +37,6 @@ function sendPost() {
   firebase.firestore().collection('posts').add(post)
      
     window.mostraPost()
-
     document.querySelector('.area-publicacao').value='';
 }
 
@@ -50,8 +50,7 @@ function mostraPost(){
         <li data-id='${doc.id}' class='post'>
         <p class='time'> ${doc.data().time} </p>
         <p> ${doc.data().publi} </p>
-          ${Button ({ dataId:doc.id, title:'Editar'})}
-          ${Button({ dataId: doc.id, title: 'Deletar', onClick: delet })}
+          ${Button({class:'button', dataId: doc.id, title: 'Deletar', onClick: delet })}
         </li>
       `;
     });
@@ -60,17 +59,16 @@ function mostraPost(){
 }
 
 function Feed() {
-
   const temp = `
-  <header>
-  <h2> Feed</h2> 
-  ${Button ({id: 'voltar', title: 'Sair', onClick: logout})}
-  </header>
+  <section class="feed-geral">
+  <h1 class = "name-page"> Feed </h1>
   <form class='areaFeed'>
   ${textArea ({rows: '3',cols: '30', wrap: 'hard',class: 'area-publicacao', id: 'area-publicacao' })}
   ${Button ({class:'button', id:'publicacao', title: 'Publicar', onClick:sendPost })}
   <ul id='post-layout'></ul>
+  ${Button ({class:'button', id: 'voltar', title: 'Sair', onClick: logout})}
   </form>
+  </section>
 
 `;
   return temp;

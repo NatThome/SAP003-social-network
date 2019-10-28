@@ -13,31 +13,23 @@ function enviarLogin() {
     window.location.href = '#feed';
   })
     .catch((error) => {
-    // Handle Errors here.
       const errorCode = error.code;
       // const errorMessage = error.message;
       alert(errorCode);
-    // ...
     });
 }
 
 function googleSignIn(){
   const provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth().signInWithPopup(provider).then(function (result) {
-    // This gives you a Google Access Token. You can use it to access the Google API.
     const token = result.credential.accessToken;
-    // The signed-in user info.
     const user = result.user;
     window.location.href = '#feed';
   }).catch(function (error) {
-    // Handle Errors here.
     const errorCode = error.code;
     const errorMessage = error.message;
-    // The email of the user's account used.
     const email = error.email;
-    // The firebase.auth.AuthCredential type that was used.
     const credential = error.credential;
-    // ...
   });
 }
 
@@ -48,7 +40,7 @@ function Login() {
   </header>
   <section class="geral">
   <h1 class = "name-page"> Funny Motivation</h1>
-  <h3 class = "bem-vindx"> Seja Bem-vindxs</h3>
+  <h3 class = "bem-vindx"> Sejam Bem-vindas</h3>
   
   <form class="form">
   ${Input({
