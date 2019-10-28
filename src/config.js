@@ -9,5 +9,9 @@ const firebaseConfig = {
     measurementId: 'G-812STV8Y8C',
   };
   // Inicializa Firebase
-  firebase.initializeApp(firebaseConfig);
+  if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+ }
+  // firebase.initializeApp(firebaseConfig);
   firebase.analytics();
+  
