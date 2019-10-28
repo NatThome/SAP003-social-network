@@ -86,7 +86,7 @@
  
 [debug] [2019-10-23T19:17:43.928Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] === Serving from '/home/ubuntu/Área de Trabalho/Laboratória/SAP003-social-network'...
 [info] 
 [debug] [2019-10-23T19:17:43.930Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
  
@@ -181,7 +181,7 @@
  
 [debug] [2019-10-25T19:31:09.372Z] <<< HTTP RESPONSE 200
 [info] 
-[info] === Serving from 'C:\users\nathy\OneDrive\Área de Trabalho\SAP003-social-network'...
+[info] === Serving from '/home/ubuntu/Área de Trabalho/Laboratória/SAP003-social-network'...
 [info] 
 [debug] [2019-10-25T19:31:09.377Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-b4317/webApps/-/config  
  

@@ -2,7 +2,7 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 function pgCadastro() {
-  window.location.href = '#cadastro';
+  window.location.hash = '#cadastro';
 }
 
 function enviarLogin() {
@@ -56,6 +56,7 @@ function Login() {
     type: 'password',
   })}</form>
     <div class="btn btn-enviar">
+
   ${Button({
     class: 'button',
     id: 'enviar',

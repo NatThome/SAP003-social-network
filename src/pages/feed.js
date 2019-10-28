@@ -69,6 +69,7 @@ function Feed() {
   ${Button ({class:'button', id: 'voltar', title: 'Sair', onClick: logout})}
   </form>
   </section>
+
 `;
   return temp;
 }

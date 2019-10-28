@@ -7,6 +7,7 @@ function cadastrarUser() {
   const email = document.querySelector('.email-input').value;
   const nascto = document.querySelector('.dtNasc-input').value;
   const password = document.querySelector('.senha-input').value;
+
   firebase.auth().createUserWithEmailAndPassword(email, password).then(() => {
     window.location.href = '#home';
   }).catch((error) => {
@@ -44,6 +45,7 @@ function Cadastro() {
     ${Input({class:'input senha-input', placeholder: 'Senha', type: 'password' })}
     ${Button({class:'button cadastro', title: 'Cadastrar', onClick: cadastrarUser })}
     ${Button({class:'button voltar', title: 'Voltar', onClick: voltarPg })}
+
   </form>
   </section>
 `;
