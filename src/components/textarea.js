@@ -1,5 +1,5 @@
-function textArea(props){
-    const textarea = `
+function textArea(props) {
+  const textarea = `
     <textarea
     rows = '${props.rows}',
     cols = '${props.cols}',
@@ -7,7 +7,7 @@ function textArea(props){
     class = '${props.class}',
     ></textarea>`;
 
-    return textarea;
+  return textarea;
 }
 
 export default textArea;

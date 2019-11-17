@@ -1,4 +1,4 @@
-import Login from './pages/home.js';
+import Login from './pages/login.js';
 import Cadastro from './pages/cadastro.js';
 import Feed from './pages/feed.js';
 
@@ -9,26 +9,23 @@ const pages = {
 };
 
 function init() {
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      if (location.hash.substring(1)) {
-        document.querySelector('main').innerHTML = pages[location.hash.substring(1)];
-        window.mostraPost()
+      if (window.location.hash.substring(1)) {
+        document.querySelector('main').innerHTML = pages[window.location.hash.substring(1)];
+        window.mostraPost();
       } else {
-        document.querySelector('main').innerHTML = pages.home
+        document.querySelector('main').innerHTML = pages.home;
       }
+    } else if (window.location.hash === '#home') {
+      document.querySelector('main').innerHTML = pages.home;
+    } else if (window.location.hash === '#cadastro') {
+      document.querySelector('main').innerHTML = pages.cadastro;
     } else {
-      if( window.location.hash === '#home'){
-        document.querySelector('main').innerHTML = pages.home
-      }else if ( window.location.hash === '#cadastro'){
-        document.querySelector('main').innerHTML = pages.cadastro
-      } else {
-        window.location.hash = '#home'; 
-      }
+      window.location.hash = '#home';
     }
   });
 }
 
 window.addEventListener('load', init);
-window.addEventListener('hashchange', init , false);
-
+window.addEventListener('hashchange', init, false);

@@ -11,51 +11,65 @@ import textArea from '../components/textarea.js';
 // }
 
 function logout() {
-  firebase.auth().signOut().then(function() {
-  }).catch(function(error) {
-    console.log(error);
-  });
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {})
+    .catch(error => console.log(error));
 }
 
-function delet(){
+function delet(event) {
   const id = event.target.dataset.id;
-  firebase.firestore().collection('posts').doc(id).delete();
+  firebase
+    .firestore()
+    .collection('posts')
+    .doc(id)
+    .delete();
   document.querySelector(`li[data-id='${id}']`).remove();
 }
 
 function sendPost() {
   const publi = document.querySelector('.area-publicacao').value;
   const id = firebase.auth().currentUser.uid;
-  const time = new Date().toLocaleString('pt-BR')
-  
+  const time = new Date().toLocaleString('pt-BR');
+
   const post = {
     publi,
     id,
-    time
+    time,
   };
 
-  firebase.firestore().collection('posts').add(post)
-     
-    window.mostraPost()
-    document.querySelector('.area-publicacao').value='';
+  firebase
+    .firestore()
+    .collection('posts')
+    .add(post);
+  window.mostraPost();
+  document.querySelector('.area-publicacao').value = '';
 }
 
-function mostraPost(){
+function mostraPost() {
   const allPosts = firebase.firestore().collection('posts');
- 
-  allPosts.orderBy('time', 'desc').get().then(snap => {
-    let postsLayout = '';
-    snap.forEach((doc) => {  
-      postsLayout += `
+  allPosts
+    .orderBy('time', 'desc')
+    .get()
+    .then((snap) => {
+      let postsLayout = '';
+      snap.forEach((doc) => {
+        postsLayout += `
         <li data-id='${doc.id}' class='post'>
         <p class='time'> ${doc.data().time} </p>
         <p> ${doc.data().publi} </p>
-          ${Button({class:'button', dataId: doc.id, title: 'Deletar', onClick: delet })}
+          ${Button({
+    class: 'button',
+    dataId: doc.id,
+    title: 'Deletar',
+    onClick: delet,
+  })}
         </li>
       `;
+      });
+      document.getElementById('post-layout').innerHTML = postsLayout;
     });
-    document.getElementById('post-layout').innerHTML = postsLayout; 
-  }); 
 }
 
 function Feed() {
@@ -63,10 +77,23 @@ function Feed() {
   <section class="feed-geral">
   <h1 class = "name-page"> Feed </h1>
   <form class='areaFeed'>
-  ${textArea ({rows: '3',cols: '30', wrap: 'hard',class: 'area-publicacao', id: 'area-publicacao' })}
-  ${Button ({class:'button', id:'publicacao', title: 'Publicar', onClick:sendPost })}
+  ${textArea({
+    rows: '3',
+    cols: '30',
+    wrap: 'hard',
+    class: 'area-publicacao',
+    id: 'area-publicacao',
+  })}
+  ${Button({
+    class: 'button',
+    id: 'publicacao',
+    title: 'Publicar',
+    onClick: sendPost,
+  })}
   <ul id='post-layout'></ul>
-  ${Button ({class:'button', id: 'voltar', title: 'Sair', onClick: logout})}
+  ${Button({
+    class: 'button', id: 'voltar', title: 'Sair', onClick: logout,
+  })}
   </form>
   </section>
 
